@@ -4,7 +4,7 @@
 
 
 <div align="center">
-<img src="assets/logo.png" alt="DEIMKit Logo" width="600">
+<img src="assets/logo.png" alt="DEIMKit Logo" width="650">
 
 <p>DEIMKit is a Python package that provides a wrapper for <a href="https://github.com/ShihuaHuang95/DEIM">DEIM: DETR with Improved Matching for Fast Convergence</a>. Check out the original repo for more details.</p>
 </div>
@@ -131,6 +131,8 @@ Vehicles Dataset
 RBC Cells Dataset
 ![alt text](assets/sample_result_batch_1.png)
 
+Stomata Dataset
+![alt text](assets/sample_result_batch_2.png)
 
 See the [demo notebook on using pretrained models](nbs/pretrained-model-inference.ipynb) and [custom model inference](nbs/custom-model-inference.ipynb) for more details.
 
@@ -147,7 +149,7 @@ conf = Config.from_model_name("deim_hgnetv2_s")
 
 conf = configure_dataset(
     config=conf,
-    image_size=[640, 640],
+    image_size=(640, 640),
     train_ann_file="dataset/PCB Holes.v4i.coco/train/_annotations.coco.json",
     train_img_folder="dataset/PCB Holes.v4i.coco/train",
     val_ann_file="dataset/PCB Holes.v4i.coco/valid/_annotations.coco.json",

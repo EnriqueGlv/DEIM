@@ -55,12 +55,12 @@ class Trainer:
         if self.distributed_initialized:
             return
 
+        logger.info(f"Initializing process group for multi-process training")
+        self.distributed_initialized = dist_utils.setup_distributed()
+
         rank = torch.distributed.get_rank()
         if rank != 0:
             logger.remove()
-
-        logger.info(f"Initializing process group for multi-process training")
-        self.distributed_initialized = dist_utils.setup_distributed()
 
         logger.info(f"Distributed initialization successful: {self.distributed_initialized}")
 
